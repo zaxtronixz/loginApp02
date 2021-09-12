@@ -29,7 +29,7 @@ router.post('/', function(req, res) {
       // fetch user record from db matching email and password
       connection.query("SELECT * FROM login_users WHERE email = ? AND password = ? ", [email, password], function(error, results, fields){
       
-        if(results){
+        if(results.length > 0{
 
             // if "accstatus" is "on" in DB set login to true"
             if(results[0].accstatus == "on") {
